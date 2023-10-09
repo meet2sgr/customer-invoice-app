@@ -1,0 +1,32 @@
+Add your custom CSS styles here
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .text-danger {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .required:after {
+    content:" *";
+    color: red;
+  }

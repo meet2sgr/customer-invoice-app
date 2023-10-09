@@ -1,0 +1,152 @@
+<div class="container">
+  <h2>{{ isNewCustomer ? "Add New Customer" : "Edit Customer" }}</h2>
+
+  <form [formGroup]="customerForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="firstname" class="required">First Name</label>
+      <input
+        type="text"
+        id="firstname"
+        formControlName="firstname"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          customerForm.get('firstname')?.hasError('required') &&
+          customerForm.get('firstname')?.touched
+        "
+        class="text-danger"
+      >
+        First Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastname" class="required">Last Name</label>
+      <input
+        type="text"
+        id="lastname"
+        formControlName="lastname"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          customerForm.get('lastname')?.hasError('required') &&
+          customerForm.get('lastname')?.touched
+        "
+        class="text-danger"
+      >
+        Last Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="required">Email</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          customerForm.get('email')?.hasError('required') &&
+          customerForm.get('email')?.touched
+        "
+        class="text-danger"
+      >
+        Email is required
+      </div>
+      <div
+        *ngIf="
+          customerForm.get('email')?.hasError('email') &&
+          customerForm.get('email')?.touched
+        "
+        class="text-danger"
+      >
+        Invalid email format
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone_Number" class="required">Phone Number</label>
+      <input
+        type="text"
+        id="phone_Number"
+        formControlName="phone_Number"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          customerForm.get('phone_Number')?.hasError('required') &&
+          customerForm.get('phone_Number')?.touched
+        "
+        class="text-danger"
+      >
+        Phone Number is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="country_code" class="required">Country Code</label>
+      <input
+        type="text"
+        id="country_code"
+        formControlName="country_code"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          customerForm.get('country_code')?.hasError('required') &&
+          customerForm.get('country_code')?.touched
+        "
+        class="text-danger"
+      >
+        Country Code is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="gender" class="required">Gender</label>
+      <select id="gender" formControlName="gender" class="form-control">
+        <option value="m">Male</option>
+        <option value="f">Female</option>
+        <option value="o">Other</option>
+      </select>
+      <div
+        *ngIf="
+          customerForm.get('gender')?.hasError('required') &&
+          customerForm.get('gender')?.touched
+        "
+        class="text-danger"
+      >
+        Gender is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="balance" class="required">Balance</label>
+      <input
+        type="text"
+        id="balance"
+        formControlName="balance"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          customerForm.get('email')?.hasError('required') &&
+          customerForm.get('email')?.touched
+        "
+        class="text-danger"
+      >
+        Balance is required
+      </div>
+    </div>
+    <!-- Add more form fields for other customer information (e.g., phone, gender, balance) -->
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">
+        {{ isNewCustomer ? "Add Customer" : "Save Changes" }}
+      </button>
+    </div>
+  </form>
+</div>
